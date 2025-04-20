@@ -1,5 +1,3 @@
-#!/home/george/rpi-rgb-vu/.venv/bin/python
-
 import argparse
 import logging
 import signal
