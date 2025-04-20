@@ -1,0 +1,10 @@
+{
+  "parallel": 2,
+  "chain_length": 3,
+  "hardware_mapping": "regular",
+  "rows": 64,
+  "cols": 64,
+  "gpio_slowdown": 4,
+  "drop_priv_user": "george",
+  "drop_priv_group": "audio"
+}
