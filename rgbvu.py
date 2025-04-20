@@ -1,6 +1,7 @@
 import argparse
 import logging
 import signal
+import sys
 import time
 from pathlib import Path
 
@@ -69,6 +70,16 @@ def main():
     parser.add_argument("--stereo", action="store_true", help="Stereo output")
     parser.add_argument("--verbose", "-v", action="store_true", help="Be more chatty")
     args = parser.parse_args()
+
+    logging.basicConfig(
+        stream=sys.stdout,
+        format="%(name)s %(levelname)s: %(message)s",
+        level=logging.DEBUG if args.verbose else logging.INFO,
+    )
+
+    # Turn on refresh updates if we're in verbose mode.
+    if args.verbose:
+        args.show_refresh = True
 
     # Does not make sense to have a split display if we're not showing stereo output.
     if args.split:

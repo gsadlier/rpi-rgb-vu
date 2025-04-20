@@ -63,7 +63,7 @@ class Matrix:
             sys.exit(1)
 
         if uid := os.getuid():
-            self._logger.info("Running at user %d, disabling hardware pulsing", uid)
+            self._logger.info("Running as user %d, disabling hardware pulsing", uid)
         else:
             self._logger.info("Running as root.")
 
